@@ -19,8 +19,14 @@ int main()
 	InitGL();
 
 	Start();
-	Update();
 
+	while (glfwWindowShouldClose(RenderWindow) == false)
+	{
+		glfwPollEvents();
+
+		Update();
+		Render();
+	}
 	return Cleanup();
 }
 
@@ -61,13 +67,7 @@ void Start()
 
 void Update()
 {
-	while (glfwWindowShouldClose(RenderWindow) == false)
-	{
-		glfwPollEvents();
 
-
-		Render();
-	}
 }
 
 void Render()
